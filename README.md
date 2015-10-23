@@ -1,4 +1,4 @@
-# HelloFresh Dev Team - Mobile Developer Test
+# HelloFresh Dev Team - Mobile Android Developer Test
 
 The goal of this test is to assert (to some degree) your coding skills.
 ​
@@ -13,7 +13,7 @@ When you're finished, reply within the existing mail conversation that you have 
 ​
 ## Requirements
 ​
-* You MUST use Swift 2 for iOS apps. For Android, your app should be compatible with Android 4.2.
+* Your app should be compatible with Android 4.2.
 ​
 * You MUST name all labels, variable names, etc., in english.
 ​
