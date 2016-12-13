@@ -8,7 +8,7 @@ You're allowed and encouraged to use third party libraries, as long as you put t
 ​
 There's no hard time limit, but it shouldn't take you more than a day.
 ​
-When you are finished, let us know by replying to the existing mail conversation from jobs@hellofresh.de. You should also create a pull request with your changes.
+When you are done create a pull request from your branch to the master branch and reply to the thread you're having with our HR department telling them we can start reviewing your code.
 
 ​
 ## Exercise
@@ -23,7 +23,7 @@ Build an app in which:
 ​
 * Each recipe can be rated/unrated
 ​
-* Since there is no server side component the server requests will fail. This is expected.
+* Since there's no server side component the server requests will fail. This is expected.
 However, client side validation before submitting forms MUST be implemented.
 ​
 * You MUST implement a fluid layout, that adapts to any device _dimensions_ and _orientation_.
