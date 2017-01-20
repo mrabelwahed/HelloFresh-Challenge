@@ -31,6 +31,8 @@ However, client side validation before submitting forms MUST be implemented.
 
 ## Requirements
 ​
+* Your app MUST be developed in Java.
+
 * Your app should be compatible with Android 4.2.
 ​
 * You MUST name all labels, variable names, etc., in english.
