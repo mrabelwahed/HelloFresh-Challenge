@@ -25,7 +25,7 @@
         "headline": "with Sweet Potato Wedges and Minted Snap Peas",
         "highlighted": true,
         "id": "533143aaff604d567f8b4571",
-        "image": "https://api.hellofresh.com/recipe/image/533143aaff604d567f8b4571",
+        "image": "https://d3hvwccx09j84u.cloudfront.net/web/image/533143aaff604d567f8b4571.jpg",
         "incompatibilities": null,
         "ingredients": [
             "375g Sweet Potatoes",
@@ -50,7 +50,7 @@
         "proteins": "43 g",
         "rating": null,
         "ratings": null,
-        "thumb": "https://api.hellofresh.com/recipe/thumb/533143aaff604d567f8b4571",
+        "thumb": "https://d3hvwccx09j84u.cloudfront.net/thumb/image/533143aaff604d567f8b4571.jpg",
         "time": "PT35M",
         "undeliverable_ingredients": [],
         "user": {
@@ -87,7 +87,7 @@
         "headline": "with Spinach and Lemon Couscous",
         "highlighted": true,
         "id": "53314247ff604d44808b4569",
-        "image": "https://api.hellofresh.com/recipe/image/53314247ff604d44808b4569",
+        "image": "https://d3hvwccx09j84u.cloudfront.net/web/image/53314247ff604d44808b4569.jpg",
         "incompatibilities": null,
         "ingredients": [
             "1 Lemon",
@@ -111,7 +111,7 @@
         "proteins": "31 g",
         "rating": 1,
         "ratings": 1,
-        "thumb": "https://api.hellofresh.com/recipe/thumb/53314247ff604d44808b4569",
+        "thumb": "https://d3hvwccx09j84u.cloudfront.net/thumb/image/53314247ff604d44808b4569.jpg",
         "time": "PT30M",
         "undeliverable_ingredients": [],
         "user": {
@@ -147,7 +147,7 @@
         "headline": "with Tomato Concasse and Crispy Potatoes",
         "highlighted": true,
         "id": "53314276ff604d28828b456b",
-        "image": "https://api.hellofresh.com/recipe/image/53314276ff604d28828b456b",
+        "image": "https://d3hvwccx09j84u.cloudfront.net/web/image/53314276ff604d28828b456b.jpg",
         "incompatibilities": null,
         "ingredients": [
             "2 Fillets Sea Bream",
@@ -170,7 +170,7 @@
         "proteins": "29 g",
         "rating": 2.5,
         "ratings": 2,
-        "thumb": "https://api.hellofresh.com/recipe/thumb/53314276ff604d28828b456b",
+        "thumb": "https://d3hvwccx09j84u.cloudfront.net/thumb/image/53314276ff604d28828b456b.jpg",
         "time": "PT35M",
         "undeliverable_ingredients": [],
         "user": {
