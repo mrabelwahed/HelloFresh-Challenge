@@ -23,14 +23,15 @@ Build an app in which:​
 * It has a login screen for signing in with a valid email and a password.
 * Each recipe can be marked as favorite/unfavorite.
 * Each recipe can be rated/unrated.
+* Each recipe has an image.
 
 ## Requirements
 
 * Your app MUST be developed in Java.
-* Your app MUST be compatible with Android 4.2.
+* Your app MUST have API 16 as minSdkVersion.
 * Since there's no server side component the server requests will fail. This is expected. However, client side validation before submitting forms MUST be implemented.
-* You MUST implement a fluid layout, that adapts to any device _dimensions_ and _orientation_.
-* You MUST name all labels, variable names, etc., in English.
+* You MUST implement a fluid layout, that adapts to most phones and tablets _dimensions_ and _orientation_.
+* You MUST name all labels, variable names, or any identifier of any kind in English.
 * You MUST document your code.
 * You CANNOT use app development frameworks (like cordova or others). But again, feel free to use any third party libs that might save you time.
 * You SHOULD write tests.
