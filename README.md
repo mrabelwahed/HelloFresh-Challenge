@@ -24,6 +24,7 @@ Build an app in which:​
 * Each recipe can be marked as favorite/unfavorite.
 * Each recipe can be rated/unrated.
 * Each recipe has an image.
+* Each recipe can be seen in more detail. 
 
 ## Requirements
 
