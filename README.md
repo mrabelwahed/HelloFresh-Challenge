@@ -32,7 +32,7 @@ Build an app in which:​
 * Your app MUST have API 16 as minSdkVersion.
 * Since there's no server side component the server requests will fail. This is expected. However, client side validation before submitting forms MUST be implemented.
 * You MUST implement a fluid layout, that adapts to most phones and tablets _dimensions_ and _orientation_.
-* You MUST name all labels, variable names, or any identifier of any kind in English.
+* You MUST name all labels, variable names, and identifiers of any kind in English.
 * You MUST document your code.
 * You CANNOT use app development frameworks (like cordova or others). But again, feel free to use any third party libs that might save you time.
 * You SHOULD write tests.
