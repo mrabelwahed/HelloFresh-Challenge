@@ -8,6 +8,8 @@ You're allowed and encouraged to use third party libraries, as long as you put t
 ​
 There's no hard time limit, but it shouldn't take you more than a day.
 
+_Note: While we love open source here at HelloFresh, please do not create a public repo with your test in! This challenge is only shared with people interviewing, and for obvious reasons we'd like it to remain this way._
+
 ## Instructions
 
 1. Clone this repo.
