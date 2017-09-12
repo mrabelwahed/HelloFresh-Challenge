@@ -6,7 +6,7 @@ Feel free to add at any point any particular technique or algorithm that you thi
 ​
 You're allowed and encouraged to use third party libraries, as long as you put them together yourself without relying on a framework to do it for you. An effective developer knows what to build and what to reuse, but also how his tools work. Be prepared to answer some questions about those packages.
 ​
-There's no hard time limit, but it shouldn't take you more than a day.
+If you can complete the test in 7 days it would be ideal. However, we'd like you to take your time and do it to the best of your availability so don't rush it :+1:
 
 _Note: While we love open source here at HelloFresh, please do not create a public repo with your test in! This challenge is only shared with people interviewing, and for obvious reasons we'd like it to remain this way._
 
