@@ -37,6 +37,6 @@ Build an app in which:​
 * You MUST name all labels, variable names, and identifiers of any kind in English.
 * You MUST document your code.
 * You CANNOT use app development frameworks (like cordova or others). But again, feel free to use any third party libs that might save you time.
-* You SHOULD write tests.
+* You SHOULD write tests. Feel free to use Java or Kotlin for your tests.
 
 Good luck, and have fun!
