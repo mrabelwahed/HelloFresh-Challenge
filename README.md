@@ -24,14 +24,13 @@ You are free to add any cool features (other than the ones mentioned below) as l
 
 #### First screen: List of recipes
 
-* The list of recipes should loaded from the [recipes.json](recipes.json) file. You can either store the JSON file in the project and read it in runtime, or make an HTTP request to get the raw file from github.
+* The list of recipes should be loaded from the [recipes.json](recipes.json) file. You can either store the JSON file in the project and read it in runtime, or make an HTTP request to get the raw file from github.
 * The image of each recipe should also be displayed in the list.
 
 #### Second screen: Detail page of a recipe
 
 * A recipe can be favorited or unfavorited.
-* A recipe can also be rated or unrated. Rating should be from 1 to 5. The rating can be represented as a rating bar.
-* You are recommended to save the favoriting status and rating of each recipe either by using SharedPreferences or some kind of offline storage.
+* You are recommended to save the favoriting status of each recipe (if a user chooses to favorite or unfavorite) either by using SharedPreferences or some kind of offline storage.
 
 #### Third screen: Log in
 
@@ -43,12 +42,16 @@ You are free to add any cool features (other than the ones mentioned below) as l
 
 ## Requirements
 
-* Your app MUST be developed in Java.
-* Your app MUST have API 16 as minSdkVersion.
-* You MUST implement layouts that adapt to most phones _dimensions_ and _orientation_.
-* You MUST name all labels, variable names, and identifiers of any kind, in English.
-* You MUST document your code.
-* You CANNOT use app development frameworks (like cordova or others). But again, feel free to use any third party libs that might save you time.
-* You SHOULD write tests. Feel free to use Java or Kotlin for your tests.
+* Implement the app in Java
+* The app needs to support API level 16 and onwards
+* All labels, variable names, and identifiers of any kind must be in English
+* Adding a description of your solution (in the PR or in the readme file) would help us to review your code faster
+* Don't use app development frameworks (like cordova or others), but feel free to use any third party libs that might save you time
+
+
+##### Bonus points
+- Unit tests (You can use Java or Kotlin)
+- UI tests (You can use Java or Kotlin)
+
 
 Good luck, and have fun!
