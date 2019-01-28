@@ -1,10 +1,10 @@
 # HelloFresh Dev Team - Mobile Android Developer Test
 
-The goal of this test is to assert (to some degree) your coding skills.
+The goal of this test is to assess your coding skills.
 
-Feel free to add at any point any particular technique or algorithm that you think might enrich the overall quality of the end result. You're allowed and encouraged to use third party libraries, as long as you put them together yourself without relying on a framework to do it for you. An effective developer knows what to build and what to reuse, but also how his tools work. Be prepared to answer some questions about those packages.
+Feel free to add any particular technique or algorithm that you think might enrich the overall quality of the end result. You're allowed to use third party libraries and packages. An effective developer knows what to build and what to reuse, but also how his or her tools work. If you use third party libraries, be prepared to answer some questions about them.
 
-If you can complete the test in 7 days it would be ideal. However, we'd like you to take your time and do it to the best of your availability so don't rush it :+1:
+You have 7 days to complete the test.
 
 _Note: While we love open source here at HelloFresh, please do not create a public repo with your test in! This challenge is only shared with people interviewing, and for obvious reasons we'd like it to remain this way._
 
@@ -42,16 +42,16 @@ You are free to add any cool features (other than the ones mentioned below) as l
 
 ## Requirements
 
-* Implement the app in Java
-* The app needs to support API level 16 and onwards
+* The app should be implemented in Kotlin (preferred) or Java
+* The app needs to support API level 19 and onwards
 * All labels, variable names, and identifiers of any kind must be in English
 * Adding a description of your solution (in the PR or in the readme file) would help us to review your code faster
 * Don't use app development frameworks (like cordova or others), but feel free to use any third party libs that might save you time
 
 
 ##### Bonus points
-- Unit tests (You can use Java or Kotlin)
-- UI tests (You can use Java or Kotlin)
+- Unit tests (You can use Kotlin or Java)
+- UI tests (You can use Kotlin or Java)
 
 
 Good luck, and have fun!
