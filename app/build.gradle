@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Android.compileSDK
+    defaultConfig {
+        applicationId Android.applicationId
+        minSdkVersion Android.minSDK
+        targetSdkVersion Android.targetSDK
+        versionCode Android.versionCode
+        versionName Android.versionName
+        testInstrumentationRunner 'com.onefootball.UIRunner'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // project libs
+    implementation Libs.coil
+    implementation Libs.kotlinStdLib
+    implementation Libs.appCompat
+    implementation Libs.coreExt
+    implementation Libs.constraintLayout
+    implementation Libs.cardview
+    implementation Libs.recyclerview
+    implementation Libs.dagger
+    kapt Libs.daggerCompiler
+    implementation Libs.viewModel
+    implementation Libs.liveData
+    implementation Libs.rxVersion
+    implementation Libs.rxAndroid
+
+    //testing libs
+    testImplementation TestLibs.junit
+    androidTestImplementation TestLibs.testRunner
+    androidTestImplementation TestLibs.espressoCore
+    kaptTest Libs.dagger
+    testImplementation Libs.dagger
+    kaptAndroidTest Libs.daggerCompiler
+    androidTestImplementation TestLibs.rxIdler
+    testImplementation TestLibs.mockito
+    androidTestImplementation TestLibs.mockitoAndroid
+    androidTestImplementation TestLibs.espressoCore
+    androidTestImplementation TestLibs.espressoContrib
+    androidTestImplementation TestLibs.espressoIntents
+    implementation TestLibs.espressoIdlingResource
+    testImplementation TestLibs.archCoreTesting
+    androidTestImplementation TestLibs.rules
+    androidTestImplementation TestLibs.truth
+    androidTestImplementation TestLibs.junitExt
+
+    // other modules
+//    implementation(project(":data"))
+//    implementation(project(":domain"))
+//    testImplementation(project(":test-utils"))
+}
