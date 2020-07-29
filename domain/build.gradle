@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Android.compileSDK
+    defaultConfig {
+        minSdkVersion Android.minSDK
+        targetSdkVersion Android.targetSDK
+        versionCode Android.versionCode
+        versionName Android.versionName
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation Libs.kotlinStdLib
+    implementation Libs.coreExt
+    implementation Libs.appCompat
+    testImplementation TestLibs.junit
+    implementation Libs.rxVersion
+    implementation Libs.rxAndroid
+    testImplementation TestLibs.mockito
+    testImplementation(project(":test-utils"))
+}

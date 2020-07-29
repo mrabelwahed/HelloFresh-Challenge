@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="mrabelwahed-android-test/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/data.iml" group="mrabelwahed-android-test/data" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/domain.iml" group="mrabelwahed-android-test/domain" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mrabelwahed-android-test.iml" filepath="$PROJECT_DIR$/.idea/modules/mrabelwahed-android-test.iml" group="mrabelwahed-android-test" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mrabelwahed-android-test_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/mrabelwahed-android-test_buildSrc.iml" group="mrabelwahed-android-test/mrabelwahed-android-test_buildSrc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test-utils/test-utils.iml" filepath="$PROJECT_DIR$/.idea/modules/test-utils/test-utils.iml" group="mrabelwahed-android-test/test-utils" />
     </modules>
   </component>
 </project>

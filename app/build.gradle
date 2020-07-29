@@ -65,7 +65,7 @@ dependencies {
     androidTestImplementation TestLibs.junitExt
 
     // other modules
-//    implementation(project(":data"))
-//    implementation(project(":domain"))
-//    testImplementation(project(":test-utils"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    testImplementation(project(":test-utils"))
 }

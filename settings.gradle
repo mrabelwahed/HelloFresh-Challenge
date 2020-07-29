@@ -1,2 +1,5 @@
+include ':test-utils'
+include ':domain'
+include ':data'
 include ':app'
 rootProject.name = "mrabelwahed-android-test"
