@@ -12,6 +12,7 @@ object Versions {
     const val DAGGER_COMPILER = "2.22"
     const val RETROFIT_VERSION = "2.7.1"
     const val GSON_VERSION = "2.8.5"
+    val GLIDE_VERSION = "4.11.0"
     const val OKHTTP_LOGGING_INTERCEPTOR_VERSION = "3.12.1"
     const val LIFE_CYCLE_VERSION = "2.2.0"
     const val CARD_VIEW_VERSION = "1.0.0"
@@ -28,7 +29,6 @@ object Versions {
     const val JUNIT_EXT_VER = "1.1.0"
     const val MOCKITO = "3.3.1"
     const val RX_IDLER = "0.10.0"
-    const val COIL_VER = "0.6.1"
 }
 
 object BuildPlugins {
@@ -59,7 +59,8 @@ object Libs {
     val viewModel = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFE_CYCLE_VERSION}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.APP_COMPAT_VERSION}"
     val coreExt = "androidx.core:core-ktx:${Versions.CORE_KTX}"
-    val coil = "io.coil-kt:coil:${Versions.COIL_VER}"
+    val glide = "com.github.bumptech.glide:glide:${Versions.GLIDE_VERSION}"
+    val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.GLIDE_VERSION}"
 }
 
 object TestLibs {

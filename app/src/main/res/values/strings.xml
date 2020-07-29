@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">App</string>
+    <string name="app_name">HelloFresh</string>
+    <string name="error_text">No available Recipes!</string>
 </resources>
