@@ -8,9 +8,8 @@ import dagger.Component
 @ActivityScope
 @Component(
     modules = [
-        RecipesActivityModule::class ,
-        GetRecipesListModule::class ,
         RecipesRepositoryModule::class,
+        RecipesActivityModule::class ,
         RecipesVmModule::class ,
         ViewModelFactoryModule::class
     ],

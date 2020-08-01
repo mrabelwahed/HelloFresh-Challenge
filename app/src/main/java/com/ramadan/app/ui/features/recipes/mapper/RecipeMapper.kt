@@ -4,8 +4,8 @@ import com.ramadan.domain.model.Recipe
 
 
 object RecipeMapper {
-    private fun transform(recipe: Recipe): com.ramadan.app.ui.features.recipes.model.Recipe {
-        return com.ramadan.app.ui.features.recipes.model.Recipe(recipe.id,recipe.name,recipe.description,recipe.image)
+     fun transform(recipe: Recipe): com.ramadan.app.ui.features.recipes.model.Recipe {
+        return com.ramadan.app.ui.features.recipes.model.Recipe(recipe.id,recipe.name,recipe.description,recipe.image,recipe.favorite)
     }
 
     fun transform(recipesCollection: Collection<Recipe>): List<com.ramadan.app.ui.features.recipes.model.Recipe > {
@@ -17,5 +17,9 @@ object RecipeMapper {
             }
         }
         return recipeList
+    }
+
+    fun transformToDomainRecipe(recipe: com.ramadan.app.ui.features.recipes.model.Recipe): Recipe {
+       return Recipe(recipe.id,recipe.name,recipe.description,recipe.image,recipe.favorite)
     }
 }

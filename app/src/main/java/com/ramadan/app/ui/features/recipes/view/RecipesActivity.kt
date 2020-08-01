@@ -10,7 +10,6 @@ import com.ramadan.app.R
 import com.ramadan.app.RecipeApp
 import com.ramadan.app.di.component.DaggerAppComponent
 import com.ramadan.app.di.component.DaggerRecipesActivityComponent
-import com.ramadan.app.di.module.GetRecipesListModule
 import com.ramadan.app.di.module.RecipesActivityModule
 import com.ramadan.app.di.module.RecipesRepositoryModule
 import com.ramadan.app.di.vmfactory.ViewModelFactory
@@ -18,6 +17,7 @@ import com.ramadan.app.state.ViewState
 import com.ramadan.app.ui.features.recipedetails.view.RecipeDetailsActivity
 import com.ramadan.app.ui.features.recipes.model.Recipe
 import com.ramadan.app.ui.features.recipes.viewmodel.RecipesViewModel
+import com.ramadan.data.AppDatabase
 import kotlinx.android.synthetic.main.activity_recipes.*
 import javax.inject.Inject
 
@@ -40,21 +40,21 @@ class RecipesActivity : AppCompatActivity(),OnClickListener {
         recipesViewModel = ViewModelProvider(this, viewModelFactory)[RecipesViewModel::class.java]
         recipesViewModel.uiState.value = ViewState.Loading
         setupNewsRecyclerview()
-        observeNewsList()
+        observeRecipesList()
     }
 
     private fun initDI() {
+        val database = AppDatabase.createAppDatabase(applicationContext)
         val appComponent = DaggerAppComponent.create()
         val recipesActivityComponent = DaggerRecipesActivityComponent.builder()
             .appComponent(appComponent)
             .recipesActivityModule(RecipesActivityModule(application as RecipeApp))
-            .recipesRepositoryModule(RecipesRepositoryModule(application as RecipeApp))
-            .getRecipesListModule(GetRecipesListModule())
+            .recipesRepositoryModule(RecipesRepositoryModule(application as RecipeApp,database))
             .build()
         recipesActivityComponent.inject(this)
     }
 
-    private fun observeNewsList() {
+    private fun observeRecipesList() {
         recipesViewModel.liveUIState.observeForever {
             when (it) {
                 is ViewState.Success<*> -> {
@@ -101,12 +101,12 @@ class RecipesActivity : AppCompatActivity(),OnClickListener {
 
     override fun onResume() {
         super.onResume()
-        recipesViewModel.getNewsList()
+        recipesViewModel.getRecipesList()
     }
 
     override fun onClick(position: Int, view: View) {
         val intent = Intent(this, RecipeDetailsActivity::class.java).apply {
-            putExtra("recipe",recipesAdapter.recipeItems[position])
+            putExtra("recipe_id",recipesAdapter.recipeItems[position].id)
             startActivity(this)
         }
     }

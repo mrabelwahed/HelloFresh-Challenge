@@ -1,6 +1,5 @@
 package com.ramadan.app.ui.features.recipes.view
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +25,10 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.RecipesViewHolder>() 
         val recipe = recipeItems[position]
         holder.itemView.nameView.text = recipe.name
         Glide.with(holder.itemView.context).load(recipe.image).into(holder.itemView.recipeView)
+        if (recipe.favorite)
+            holder.itemView.favoriteView.setImageResource(R.drawable.ic_baseline_favorite_24)
+        else
+            holder.itemView.favoriteView.setImageResource(R.drawable.ic_baseline_favorite_border_24)
         holder.itemView.setOnClickListener { listener.onClick(position, it) }
     }
 

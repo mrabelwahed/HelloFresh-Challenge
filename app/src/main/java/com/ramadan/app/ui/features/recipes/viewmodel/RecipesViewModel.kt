@@ -17,7 +17,7 @@ class RecipesViewModel @Inject constructor(private val usecase: GetRecipesList) 
     val liveUIState: LiveData<ViewState>
         get() = uiState
 
-    fun getNewsList() {
+    fun getRecipesList() {
         compositeDisposable.add(usecase.execute(Unit).subscribe(
             { res -> uiState.value = ViewState.Success(RecipeMapper.transform(res)) },
             { error -> uiState.value = setFailure(error) }

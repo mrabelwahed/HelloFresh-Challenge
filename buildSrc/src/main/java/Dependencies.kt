@@ -1,3 +1,6 @@
+import Versions.ROOM_VER
+import javax.swing.RootPaneContainer
+
 object Versions {
     const val KOTLIN = "1.3.72"
     const val COMPILE_SDK = 28
@@ -7,13 +10,10 @@ object Versions {
     const val VERSION_NAME = "1.0"
     const val RXJAVA_VERSION = "2.2.13"
     const val RX_ANDROID = "2.1.1"
-    const val RX_RETROFIT_ADAPTER = "2.6.1"
     const val DAGGER_VERSION = "2.22"
     const val DAGGER_COMPILER = "2.22"
-    const val RETROFIT_VERSION = "2.7.1"
     const val GSON_VERSION = "2.8.5"
     val GLIDE_VERSION = "4.11.0"
-    const val OKHTTP_LOGGING_INTERCEPTOR_VERSION = "3.12.1"
     const val LIFE_CYCLE_VERSION = "2.2.0"
     const val CARD_VIEW_VERSION = "1.0.0"
     const val RECYCLERVIEW_VERSION = "1.0.0"
@@ -29,6 +29,7 @@ object Versions {
     const val JUNIT_EXT_VER = "1.1.0"
     const val MOCKITO = "3.3.1"
     const val RX_IDLER = "0.10.0"
+    const val  ROOM_VER = "2.2.5"
 }
 
 object BuildPlugins {
@@ -61,6 +62,10 @@ object Libs {
     val coreExt = "androidx.core:core-ktx:${Versions.CORE_KTX}"
     val glide = "com.github.bumptech.glide:glide:${Versions.GLIDE_VERSION}"
     val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.GLIDE_VERSION}"
+    val gson = "com.google.code.gson:gson:${Versions.GSON_VERSION}"
+    val room = "androidx.room:room-runtime:$ROOM_VER"
+    val roomCompiler = "androidx.room:room-compiler:$ROOM_VER"
+    val rxRoom = "androidx.room:room-rxjava2:$ROOM_VER"
 }
 
 object TestLibs {

@@ -7,6 +7,6 @@ import dagger.Provides
 
 @Module
 class GetRecipesListModule {
-    @Provides
-    fun provideGetRecipesList(repo: RecipesRepositoryImpl) = GetRecipesList(repo)
+//    @Provides
+//    fun provideGetRecipesList(repo: RecipesRepositoryImpl) = GetRecipesList(repo)
 }

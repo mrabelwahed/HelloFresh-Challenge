@@ -32,10 +32,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // project libs
     implementation Libs.glide
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    annotationProcessor Libs.glideCompiler
 
+    annotationProcessor Libs.glideCompiler
     implementation Libs.kotlinStdLib
     implementation Libs.appCompat
     implementation Libs.coreExt
@@ -48,6 +46,7 @@ dependencies {
     implementation Libs.liveData
     implementation Libs.rxVersion
     implementation Libs.rxAndroid
+
 
     //testing libs
     testImplementation TestLibs.junit

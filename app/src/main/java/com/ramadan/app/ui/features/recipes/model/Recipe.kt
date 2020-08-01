@@ -4,5 +4,5 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Recipe(val id: String,val name : String, val description:String , val image:String) :
+data class Recipe(val id: String,val name : String, val description:String , val image:String, var favorite: Boolean) :
     Parcelable

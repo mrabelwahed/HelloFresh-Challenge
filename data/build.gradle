@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion Android.compileSDK
@@ -19,5 +20,10 @@ dependencies {
     implementation Libs.appCompat
     implementation Libs.rxVersion
     implementation Libs.rxAndroid
+    implementation Libs.room
+    kapt Libs.roomCompiler
+    implementation Libs.rxRoom
+    implementation Libs.dagger
+    kapt Libs.daggerCompiler
     implementation(project(":domain"))
 }
