@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">HelloFresh</string>
     <string name="error_text">No available Recipes!</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
 </resources>

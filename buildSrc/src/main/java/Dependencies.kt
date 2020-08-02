@@ -29,6 +29,7 @@ object Versions {
     const val JUNIT_EXT_VER = "1.1.0"
     const val MOCKITO = "3.3.1"
     const val RX_IDLER = "0.10.0"
+    val MATERIAL_VERSION = "1.0.0"
     const val  ROOM_VER = "2.2.5"
 }
 
@@ -66,6 +67,7 @@ object Libs {
     val room = "androidx.room:room-runtime:$ROOM_VER"
     val roomCompiler = "androidx.room:room-compiler:$ROOM_VER"
     val rxRoom = "androidx.room:room-rxjava2:$ROOM_VER"
+    val material = "com.google.android.material:material:${Versions.MATERIAL_VERSION}"
 }
 
 object TestLibs {
