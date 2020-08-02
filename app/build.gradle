@@ -11,7 +11,7 @@ android {
         targetSdkVersion Android.targetSDK
         versionCode Android.versionCode
         versionName Android.versionName
-        testInstrumentationRunner 'com.onefootball.UIRunner'
+        testInstrumentationRunner 'com.ramadan.app.UIRunner'
     }
     buildTypes {
         release {

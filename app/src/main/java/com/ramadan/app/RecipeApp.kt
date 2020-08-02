@@ -5,7 +5,7 @@ import com.ramadan.app.di.component.AppComponent
 import com.ramadan.app.di.component.DaggerAppComponent
 import com.ramadan.app.di.module.AppModule
 
-class RecipeApp  : Application() {
+open class RecipeApp  : Application() {
     private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
