@@ -60,7 +60,7 @@ class RecipesActivity : AppCompatActivity(),OnClickListener {
                 is ViewState.Success<*> -> {
                     val recipesList = (it.item as ArrayList<Recipe>)
                     handleUISuccess()
-                    recipesAdapter.setRecipesList(recipesList)
+                    recipesAdapter.submitList(recipesList)
                 }
                 is ViewState.Error -> {
                     handleUIError()
@@ -104,9 +104,9 @@ class RecipesActivity : AppCompatActivity(),OnClickListener {
         recipesViewModel.getRecipesList()
     }
 
-    override fun onClick(position: Int, view: View) {
-        val intent = Intent(this, RecipeDetailsActivity::class.java).apply {
-            putExtra("recipe_id",recipesAdapter.recipeItems[position].id)
+    override fun onClick(recipe: Recipe) {
+        Intent(this, RecipeDetailsActivity::class.java).apply {
+            putExtra("recipe_id",recipe.id)
             startActivity(this)
         }
     }

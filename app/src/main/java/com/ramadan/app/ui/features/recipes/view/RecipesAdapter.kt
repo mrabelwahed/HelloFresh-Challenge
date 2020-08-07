@@ -1,48 +1,57 @@
 package com.ramadan.app.ui.features.recipes.view
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.ramadan.app.R
 import com.ramadan.app.ui.features.recipes.model.Recipe
+import com.ramadan.app.ui.features.recipes.view.RecipesAdapter.RecipesViewHolder
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.recipe_item.view.*
 
-class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.RecipesViewHolder>() {
+class RecipesAdapter :ListAdapter <Recipe , RecipesViewHolder>(RecipeDiffCallback()){
 
-    val recipeItems = ArrayList<Recipe>()
     private lateinit var listener: OnClickListener
-
+    lateinit var  context : Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesViewHolder {
+        context = parent.context
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recipe_item, parent, false)
         return RecipesViewHolder(view)
     }
 
-    override fun getItemCount() = recipeItems.size
-
     override fun onBindViewHolder(holder: RecipesViewHolder, position: Int) {
-        val recipe = recipeItems[position]
-        holder.itemView.nameView.text = recipe.name
-        Glide.with(holder.itemView.context).load(recipe.image).into(holder.itemView.recipeView)
-        if (recipe.favorite)
-            holder.itemView.favoriteView.setImageResource(R.drawable.ic_baseline_favorite_24)
-        else
-            holder.itemView.favoriteView.setImageResource(R.drawable.ic_baseline_favorite_border_24)
-        holder.itemView.setOnClickListener { listener.onClick(position, it) }
-    }
-
-    fun setRecipesList(newListOfRecipesItems: List<Recipe>) {
-        recipeItems.clear()
-        recipeItems.addAll(newListOfRecipesItems)
-        notifyDataSetChanged()
+        val recipe = getItem(position)
+         holder.bindTo(recipe)
+         holder.itemView.setOnClickListener { listener.onClick(recipe) }
     }
 
     fun setClickListener(listener: OnClickListener) {
         this.listener = listener
     }
 
-    class RecipesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class RecipesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        fun bindTo(recipe: Recipe){
+            itemView.nameView.text = recipe.name
+            Picasso.get().load(recipe.image).into(itemView.recipeView);
+            if (recipe.favorite)
+                itemView.favoriteView.setImageResource(R.drawable.ic_baseline_favorite_24)
+            else
+               itemView.favoriteView.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+        }
+    }
+}
 
+class RecipeDiffCallback : DiffUtil.ItemCallback<Recipe>() {
+    override fun areItemsTheSame(oldItem: Recipe, newItem: Recipe): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: Recipe, newItem: Recipe): Boolean {
+        return oldItem == newItem
+    }
 
 }

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
 import com.ramadan.app.R
 import com.ramadan.app.RecipeApp
 import com.ramadan.app.di.component.DaggerAppComponent
@@ -17,6 +16,7 @@ import com.ramadan.app.ui.features.recipedetails.viewmodel.RecipeDetailsViewMode
 import com.ramadan.app.ui.features.recipes.mapper.RecipeMapper
 import com.ramadan.app.ui.features.recipes.model.Recipe
 import com.ramadan.data.AppDatabase
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_recipe_details.*
 import kotlinx.android.synthetic.main.recipe_item.nameView
 import kotlinx.android.synthetic.main.recipe_item.recipeView
@@ -55,7 +55,7 @@ class RecipeDetailsActivity : AppCompatActivity() {
     private fun setData(recipe: Recipe) {
         nameView.text = recipe.name
         descriptionView.text = recipe.description
-        Glide.with(this).load(recipe.image).into(recipeView)
+        Picasso.get().load(recipe.image).into(recipeView)
     }
 
     override fun onResume() {

@@ -1,3 +1,4 @@
+import Versions.PICASSO
 import Versions.ROOM_VER
 import javax.swing.RootPaneContainer
 
@@ -13,7 +14,6 @@ object Versions {
     const val DAGGER_VERSION = "2.22"
     const val DAGGER_COMPILER = "2.22"
     const val GSON_VERSION = "2.8.5"
-    val GLIDE_VERSION = "4.11.0"
     const val LIFE_CYCLE_VERSION = "2.2.0"
     const val CARD_VIEW_VERSION = "1.0.0"
     const val RECYCLERVIEW_VERSION = "1.0.0"
@@ -31,6 +31,7 @@ object Versions {
     const val RX_IDLER = "0.10.0"
     val MATERIAL_VERSION = "1.0.0"
     const val  ROOM_VER = "2.2.5"
+    const val PICASSO = 2.71828
 }
 
 object BuildPlugins {
@@ -61,13 +62,12 @@ object Libs {
     val viewModel = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFE_CYCLE_VERSION}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.APP_COMPAT_VERSION}"
     val coreExt = "androidx.core:core-ktx:${Versions.CORE_KTX}"
-    val glide = "com.github.bumptech.glide:glide:${Versions.GLIDE_VERSION}"
-    val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.GLIDE_VERSION}"
     val gson = "com.google.code.gson:gson:${Versions.GSON_VERSION}"
     val room = "androidx.room:room-runtime:$ROOM_VER"
     val roomCompiler = "androidx.room:room-compiler:$ROOM_VER"
     val rxRoom = "androidx.room:room-rxjava2:$ROOM_VER"
     val material = "com.google.android.material:material:${Versions.MATERIAL_VERSION}"
+     val picasso = "com.squareup.picasso:picasso:${PICASSO}"
 }
 
 object TestLibs {

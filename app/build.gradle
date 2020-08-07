@@ -31,10 +31,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // project libs
-    implementation Libs.glide
+    implementation Libs.picasso
     implementation Libs.material
-
-    annotationProcessor Libs.glideCompiler
     implementation Libs.kotlinStdLib
     implementation Libs.appCompat
     implementation Libs.coreExt
