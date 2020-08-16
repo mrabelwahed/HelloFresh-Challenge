@@ -1,10 +1,10 @@
 package com.ramadan.app.di.component
 
 import com.ramadan.app.RecipeApp
+import com.ramadan.app.di.module.AppDatabaseModule
 import com.ramadan.app.di.module.AppModule
 import com.ramadan.app.di.scope.AppScope
-import com.ramadan.data.AppDatabase
-import com.ramadan.data.di.AppDatabaseModule
+import com.ramadan.domain.repository.RecipesRepository
 import dagger.BindsInstance
 import dagger.Component
 
@@ -16,5 +16,11 @@ import dagger.Component
     ]
 )
 interface AppComponent {
-    fun inject(target: RecipeApp)
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun application(application: RecipeApp): Builder
+        fun build(): AppComponent
+    }
+    fun getRecipesRepository():RecipesRepository
 }

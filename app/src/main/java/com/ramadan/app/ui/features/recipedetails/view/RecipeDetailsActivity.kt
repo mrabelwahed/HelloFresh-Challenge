@@ -6,16 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.ramadan.app.R
 import com.ramadan.app.RecipeApp
-import com.ramadan.app.di.component.DaggerAppComponent
 import com.ramadan.app.di.component.DaggerRecipeDetailsActivityComponent
-
-import com.ramadan.app.di.module.RecipesRepositoryModule
 import com.ramadan.app.di.vmfactory.ViewModelFactory
 import com.ramadan.app.state.ViewState
 import com.ramadan.app.ui.features.recipedetails.viewmodel.RecipeDetailsViewModel
 import com.ramadan.app.ui.features.recipes.mapper.RecipeMapper
 import com.ramadan.app.ui.features.recipes.model.Recipe
-import com.ramadan.data.AppDatabase
+import com.ramadan.app.ui.features.recipes.view.RecipesActivity.Companion.RECIPE_ID
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_recipe_details.*
 import kotlinx.android.synthetic.main.recipe_item.nameView
@@ -26,14 +23,15 @@ class RecipeDetailsActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private lateinit var recipeDetailsViewModel: RecipeDetailsViewModel
-    lateinit var recipeId:String
-    lateinit var recipe:Recipe
+    lateinit var recipeId: String
+    lateinit var recipe: Recipe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_details)
         initDI()
-        recipeDetailsViewModel = ViewModelProvider(this, viewModelFactory)[RecipeDetailsViewModel::class.java]
-        recipeId = intent.getStringExtra("recipe_id")
+        recipeDetailsViewModel =
+            ViewModelProvider(this, viewModelFactory)[RecipeDetailsViewModel::class.java]
+        recipeId = intent.getStringExtra(RECIPE_ID)
 
         observeRecipe()
 
@@ -43,11 +41,10 @@ class RecipeDetailsActivity : AppCompatActivity() {
     }
 
     private fun initDI() {
-        val database = AppDatabase.createAppDatabase(applicationContext)
-        val appComponent = DaggerAppComponent.create()
+        // val database = AppDatabase.createAppDatabase(applicationContext)
         val recipeDetailsActivityComponent = DaggerRecipeDetailsActivityComponent.builder()
-            .appComponent(appComponent)
-            .recipesRepositoryModule(RecipesRepositoryModule(application as RecipeApp,database))
+            .appComponent((application as RecipeApp).getApplicationComponent())
+            //.recipesRepositoryModule(RecipesRepositoryModule())
             .build()
         recipeDetailsActivityComponent.inject(this)
     }
@@ -74,24 +71,18 @@ class RecipeDetailsActivity : AppCompatActivity() {
                 is ViewState.Error -> {
                     handleUIError()
                 }
-                is ViewState.Loading -> {
-                    handleUILoading()
-                }
             }
         }
     }
 
-    private fun handleUILoading() {
-
-    }
 
     private fun handleUIError() {
-        Toast.makeText(this,"something went wrong",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "something went wrong", Toast.LENGTH_SHORT).show()
     }
 
     private fun handleUISuccess(recipe: Recipe) {
         setData(recipe)
-        if(recipe.favorite)
+        if (recipe.favorite)
             favoriteView.setImageResource(R.drawable.ic_baseline_favorite_24)
         else
             favoriteView.setImageResource(R.drawable.ic_baseline_favorite_border_24)

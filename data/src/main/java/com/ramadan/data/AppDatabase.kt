@@ -7,17 +7,9 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [RecipeEntity::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract  fun recipeDAO(): RecipeDAO
-
-    companion object{
-        fun createAppDatabase(context:Context): AppDatabase {
-            return  Room.databaseBuilder(context, AppDatabase::class.java, "hellofresh-db")
-                .fallbackToDestructiveMigration()
-                .build()
-        }
-    }
-
 }

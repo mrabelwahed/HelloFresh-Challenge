@@ -8,20 +8,17 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ramadan.app.R
 import com.ramadan.app.RecipeApp
-import com.ramadan.app.di.component.DaggerAppComponent
 import com.ramadan.app.di.component.DaggerRecipesActivityComponent
 import com.ramadan.app.di.module.RecipesActivityModule
-import com.ramadan.app.di.module.RecipesRepositoryModule
 import com.ramadan.app.di.vmfactory.ViewModelFactory
 import com.ramadan.app.state.ViewState
 import com.ramadan.app.ui.features.recipedetails.view.RecipeDetailsActivity
 import com.ramadan.app.ui.features.recipes.model.Recipe
 import com.ramadan.app.ui.features.recipes.viewmodel.RecipesViewModel
-import com.ramadan.data.AppDatabase
 import kotlinx.android.synthetic.main.activity_recipes.*
 import javax.inject.Inject
 
-class RecipesActivity : AppCompatActivity(),OnClickListener {
+class RecipesActivity : AppCompatActivity(), OnClickListener {
 
     @Inject
     lateinit var recipesAdapter: RecipesAdapter
@@ -39,17 +36,15 @@ class RecipesActivity : AppCompatActivity(),OnClickListener {
         initDI()
         recipesViewModel = ViewModelProvider(this, viewModelFactory)[RecipesViewModel::class.java]
         recipesViewModel.uiState.value = ViewState.Loading
-        setupNewsRecyclerview()
+        setupRecipesRecyclerview()
         observeRecipesList()
     }
 
     private fun initDI() {
-        val database = AppDatabase.createAppDatabase(applicationContext)
-        val appComponent = DaggerAppComponent.create()
+        val appComponent = (application as RecipeApp).getApplicationComponent()
         val recipesActivityComponent = DaggerRecipesActivityComponent.builder()
             .appComponent(appComponent)
             .recipesActivityModule(RecipesActivityModule(application as RecipeApp))
-            .recipesRepositoryModule(RecipesRepositoryModule(application as RecipeApp,database))
             .build()
         recipesActivityComponent.inject(this)
     }
@@ -91,7 +86,7 @@ class RecipesActivity : AppCompatActivity(),OnClickListener {
         errorText.visibility = View.GONE
     }
 
-    private fun setupNewsRecyclerview() {
+    private fun setupRecipesRecyclerview() {
         with(recipesRecyclerView) {
             adapter = recipesAdapter
             layoutManager = linearLayoutManager
@@ -106,9 +101,13 @@ class RecipesActivity : AppCompatActivity(),OnClickListener {
 
     override fun onClick(recipe: Recipe) {
         Intent(this, RecipeDetailsActivity::class.java).apply {
-            putExtra("recipe_id",recipe.id)
+            putExtra(RECIPE_ID, recipe.id)
             startActivity(this)
         }
+    }
+
+    companion object {
+        const val RECIPE_ID = "recipe_ID"
     }
 
 }

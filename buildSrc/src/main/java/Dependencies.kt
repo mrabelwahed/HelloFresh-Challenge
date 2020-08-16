@@ -1,6 +1,3 @@
-import Versions.PICASSO
-import Versions.ROOM_VER
-import javax.swing.RootPaneContainer
 
 object Versions {
     const val KOTLIN = "1.3.72"
@@ -63,11 +60,11 @@ object Libs {
     val appCompat = "androidx.appcompat:appcompat:${Versions.APP_COMPAT_VERSION}"
     val coreExt = "androidx.core:core-ktx:${Versions.CORE_KTX}"
     val gson = "com.google.code.gson:gson:${Versions.GSON_VERSION}"
-    val room = "androidx.room:room-runtime:$ROOM_VER"
-    val roomCompiler = "androidx.room:room-compiler:$ROOM_VER"
-    val rxRoom = "androidx.room:room-rxjava2:$ROOM_VER"
+    val room = "androidx.room:room-runtime:${Versions.ROOM_VER}"
+    val roomCompiler = "androidx.room:room-compiler:${Versions.ROOM_VER}"
+    val rxRoom = "androidx.room:room-rxjava2:${Versions.ROOM_VER}"
     val material = "com.google.android.material:material:${Versions.MATERIAL_VERSION}"
-     val picasso = "com.squareup.picasso:picasso:${PICASSO}"
+    val picasso = "com.squareup.picasso:picasso:${Versions.PICASSO}"
 }
 
 object TestLibs {

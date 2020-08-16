@@ -30,7 +30,7 @@ class LoginViewModelTest {
 
     private lateinit var loginViewModel: LoginViewModel
 
-    private lateinit var getNewsList: LoginUser
+    private lateinit var loginUser: LoginUser
 
     @Mock
     var observer: Observer<ViewState> = mock()
@@ -48,8 +48,8 @@ class LoginViewModelTest {
 
     @Before
     fun setup() {
-        getNewsList = LoginUser(userRepository)
-        loginViewModel = LoginViewModel(getNewsList)
+        loginUser = LoginUser(userRepository)
+        loginViewModel = LoginViewModel(loginUser)
         loginViewModel.liveUIState.observeForever(observer)
     }
 

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.ramadan.app.R
+import com.ramadan.app.RecipeApp
 import com.ramadan.app.di.component.DaggerAppComponent
 import com.ramadan.app.di.component.DaggerLoginActivityComponent
 import com.ramadan.app.di.module.UserRepositoryModule
@@ -75,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initDI() {
-        val appComponent = DaggerAppComponent.create()
+        val appComponent = (application as RecipeApp).getApplicationComponent()
         val userActivityComponent = DaggerLoginActivityComponent.builder()
             .appComponent(appComponent)
             .userRepositoryModule(UserRepositoryModule())

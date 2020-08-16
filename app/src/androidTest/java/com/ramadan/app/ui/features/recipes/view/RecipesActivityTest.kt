@@ -24,7 +24,7 @@ class RecipesActivityTest {
     }
 
     @Test
-    fun should_open_details_screen_when_click_news_item() {
+    fun should_open_details_screen_when_click_recipe_item() {
         recipes {
             checkRecipesListDisplayed()
             clickRecipeItem(0)
@@ -33,10 +33,10 @@ class RecipesActivityTest {
     }
 
     @Test
-    fun should_scroll_to_the_end_of_news_list() {
+    fun should_scroll_to_the_end_of_recipes_list() {
         recipes {
             checkRecipesListDisplayed()
-            val count = intentsTestRule.activity.recipesAdapter.recipeItems.size
+            val count = intentsTestRule.activity.recipesAdapter.itemCount
             scrollTo(count - 1)
         }
     }

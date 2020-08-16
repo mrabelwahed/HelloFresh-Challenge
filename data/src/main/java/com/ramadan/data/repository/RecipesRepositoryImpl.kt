@@ -2,6 +2,7 @@ package com.ramadan.data.repository
 
 import RecipeMapper
 import android.app.Application
+import android.content.Context
 import com.ramadan.data.AppDatabase
 import com.ramadan.data.RecipeEntity
 import com.ramadan.domain.model.Recipe
@@ -12,8 +13,16 @@ import io.reactivex.Single
 import org.json.JSONArray
 import org.json.JSONObject
 import java.nio.charset.Charset
+import javax.inject.Inject
 
-class RecipesRepositoryImpl ( private val app: Application , private val appDatabase: AppDatabase):RecipesRepository{
+private const val ID = "id"
+private const val NAME ="name"
+private const val DESC = "description"
+private const val IMAGE ="image"
+private const val RECIPES_FILE = "recipes.json"
+
+
+class RecipesRepositoryImpl (val context: Context , val appDatabase: AppDatabase):RecipesRepository{
 
     override fun getRecipes(): Flowable<List<Recipe>> {
         return  Flowable.concat(
@@ -23,7 +32,7 @@ class RecipesRepositoryImpl ( private val app: Application , private val appData
     }
 
     private fun getFileRecipes():Flowable<List<Recipe>>{
-        val inputStream = app.assets.open("recipes.json")
+        val inputStream = context.assets.open(RECIPES_FILE)
         val size = inputStream.available()
         val buffer = ByteArray(size)
         inputStream.read(buffer)
@@ -65,10 +74,10 @@ class RecipesRepositoryImpl ( private val app: Application , private val appData
         val recipesArray = JSONArray(jsonString)
         val recipesItems = mutableListOf<com.ramadan.data.model.Recipe>()
         recipesArray.forEach { recipeObject ->
-            val id = recipeObject.optString("id")
-            val name = recipeObject.optString("name")
-            val description = recipeObject.optString("description")
-            val image = recipeObject.optString("image")
+            val id = recipeObject.optString(ID)
+            val name = recipeObject.optString(NAME)
+            val description = recipeObject.optString(DESC)
+            val image = recipeObject.optString(IMAGE)
             recipesItems.add(com.ramadan.data.model.Recipe(id,name,description,image,false))
         }
         return recipesItems

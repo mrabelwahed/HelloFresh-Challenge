@@ -45,6 +45,9 @@ dependencies {
     implementation Libs.liveData
     implementation Libs.rxVersion
     implementation Libs.rxAndroid
+    implementation Libs.room
+    kapt Libs.roomCompiler
+    implementation Libs.rxRoom
 
 
     //testing libs

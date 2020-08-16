@@ -3,19 +3,21 @@ package com.ramadan.app
 import android.app.Application
 import com.ramadan.app.di.component.AppComponent
 import com.ramadan.app.di.component.DaggerAppComponent
-import com.ramadan.app.di.module.AppModule
 
-open class RecipeApp  : Application() {
+
+open class RecipeApp : Application() {
     private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()
         appComponent = getApplicationComponent()
-        appComponent.inject(this)
     }
 
-    open fun getApplicationComponent(): AppComponent =
-        DaggerAppComponent.builder()
-            .appModule(AppModule())
+    open fun getApplicationComponent(): AppComponent {
+
+        return DaggerAppComponent.builder()
+            .application(this)
             .build()
+    }
+
 }
